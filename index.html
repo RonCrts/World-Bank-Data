@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>World Bank Data</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">World Bank Data</h1>
+        <div class="flex flex-col md:flex-row md:items-center mb-4">
+            <label for="indicatorSelect" class="mr-2">Select an indicator:</label>
+            <select id="indicatorSelect" class="border rounded-md p-2">
+                <option value="SP.POP.TOTL">Population, total</option>
+                <option value="NY.GDP.MKTP.CD">GDP (current US$)</option>
+                <option value="NY.GDP.PCAP.CD">GDP per capita (current US$)</option>
+                <option value="SP.DYN.LE00.IN">Life expectancy at birth, total (years)</option>
+                <option value="SP.URB.TOTL.IN.ZS">Urban population (% of total population)</option>
+                <option value="SP.ADO.TFRT">Adolescent fertility rate (births per 1,000 women ages 15-19)</option>
+                <option value="SP.DYN.IMRT.IN">Mortality rate, infant (per 1,000 live births)</option>
+                <option value="SP.POP.GROW">Population growth (annual %)</option>
+                <option value="SP.RUR.TOTL.ZS">Rural population (% of total population)</option>
+                <option value="SP.URB.GROW">Urban population growth (annual %)</option>
+            </select>
+            <button id="generateGraphBtn"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">Generate
+                Graph</button>
+            <button id="downloadCsvBtn"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">Download
+                CSV</button>
+        </div>
+        <p class="mb-4">This graph shows the values of the selected indicator for the United States between 1973 and
+            2022.</p>
+        <div class="flex justify-center">
+            <canvas id="myChart" class="bg-white rounded-md shadow-md"></canvas>
+        </div>
+        <p class="text-red-500 mt-4" id="errorContainer"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
